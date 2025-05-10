@@ -1,0 +1,28 @@
+{
+    "name": "blog_bk",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon --inspect index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Picces04/Nodejs_blog.git"
+    },
+    "keywords": [
+        "nodejs",
+        "blog"
+    ],
+    "author": "hainp143",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Picces04/Nodejs_blog/issues"
+    },
+    "homepage": "https://github.com/Picces04/Nodejs_blog#readme",
+    "description": "",
+    "dependencies": {
+        "express": "^5.1.0",
+        "nodemon": "^3.1.10"
+    }
+}
