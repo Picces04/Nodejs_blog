@@ -1,12 +1,11 @@
-import express from 'express';
-import { engine } from 'express-handlebars';
-import morgan from 'morgan';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
+const { engine } = require('express-handlebars');
+const morgan = require('morgan');
+const path = require('path');
 
-// Fix for __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const route = require('./routes');
+const db = require('./config/db');
+db.connect(); // Connect to the database
 
 const app = express();
 const port = 3000;
@@ -27,13 +26,7 @@ app.engine(
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/resource/views'));
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
-
-app.get('/news', (req, res) => {
-    res.render('news');
-});
+route(app); // Initialize routes
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
